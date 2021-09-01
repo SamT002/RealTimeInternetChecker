@@ -1,6 +1,5 @@
 package com.example.tools2.viewModel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,7 +7,7 @@ import com.example.tools2.model.DataClasses
 import com.example.tools2.repository.Repository
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import net.simplifiedcoding.multiviewlist.data.network.Resource
+import com.example.tools2.model.Resource
 
 class HomeViewModel(private val repository: Repository) : ViewModel() {
 
@@ -19,7 +18,7 @@ class HomeViewModel(private val repository: Repository) : ViewModel() {
         getHomeListItems()
     }
 
-    private fun getHomeListItems() {
+    fun getHomeListItems() {
         viewModelScope.launch {
 
             val reallyJoke = async { repository.getJoke() }

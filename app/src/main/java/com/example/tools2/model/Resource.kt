@@ -1,4 +1,4 @@
-package net.simplifiedcoding.multiviewlist.data.network
+package com.example.tools2.model
 
 import okhttp3.ResponseBody
 

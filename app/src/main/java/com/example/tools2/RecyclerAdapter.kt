@@ -7,7 +7,7 @@ import com.example.tools2.databinding.ItemBinding
 import com.example.tools2.model.DataClasses
 import com.example.tools2.model.MyRecyclerHolders
 
-class RecyclerAdapter : RecyclerView.Adapter<MyRecyclerHolders>() {
+class RecyclerAdapter(val click:Clicker) : RecyclerView.Adapter<MyRecyclerHolders>() {
 
     private var items = mutableListOf<DataClasses>()
 
@@ -20,8 +20,7 @@ class RecyclerAdapter : RecyclerView.Adapter<MyRecyclerHolders>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRecyclerHolders {
         return when (viewType) {
             R.layout.item -> MyRecyclerHolders.FirstViewHolder(
-                ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            )
+                ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false), )
 
             else -> throw IllegalArgumentException("Invalid Type from adapter")
         }
@@ -31,6 +30,11 @@ class RecyclerAdapter : RecyclerView.Adapter<MyRecyclerHolders>() {
         when(holder){
             is MyRecyclerHolders.FirstViewHolder -> {
                 holder.bind(items[position] as DataClasses.Joke)
+                // тут реализуется делегирование при нажатии на клик срабатывает интерфейс туда передается дата
+                holder.itemView.setOnClickListener{
+                    click.itemClickListener(items[position])
+                }
+
             }
         }
     }

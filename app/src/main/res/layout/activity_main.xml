@@ -7,17 +7,74 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:textSize="30sp"
-        android:layout_height="wrap_content"/>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+     android:orientation="horizontal">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+
+     <com.github.ybq.android.spinkit.SpinKitView
+         android:id="@+id/spinner"
+         android:layout_marginTop="20dp"
+         style="@style/SpinKitView.CubeGrid"
+         android:layout_width="wrap_content"
+         android:layout_margin="10dp"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginBottom="10dp"
+         app:SpinKit_Color="@color/teal_200"/>
+
+     <com.github.ybq.android.spinkit.SpinKitView
+         android:id="@+id/spinner2"
+         android:layout_margin="10dp"
+         android:layout_marginTop="20dp"
+         style="@style/SpinKitView.WanderingCubes"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginBottom="10dp"
+         app:SpinKit_Color="@color/teal_200"/>
+
+     <com.github.ybq.android.spinkit.SpinKitView
+         android:id="@+id/spinner3"
+         android:layout_margin="10dp"
+         android:layout_marginTop="20dp"
+         style="@style/SpinKitView.Wave"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginBottom="10dp"
+         app:SpinKit_Color="@color/teal_200"/>
+
+     <com.github.ybq.android.spinkit.SpinKitView
+         android:id="@+id/spinner4"
+         android:layout_margin="10dp"
+         android:layout_marginTop="20dp"
+         style="@style/SpinKitView.FoldingCube"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginBottom="10dp"
+         app:SpinKit_Color="@color/teal_200"/>
+
+     <com.github.ybq.android.spinkit.SpinKitView
+         android:id="@+id/spinner5"
+         android:layout_margin="10dp"
+         android:layout_marginTop="20dp"
+         style="@style/SpinKitView.RotatingCircle"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginBottom="10dp"
+         app:SpinKit_Color="@color/teal_200"/>
+
+  </LinearLayout>
+
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recycler"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
 
 
 </LinearLayout>

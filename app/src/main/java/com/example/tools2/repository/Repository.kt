@@ -4,8 +4,8 @@ import com.example.tools2.model.SafeApiCall
 import com.example.tools2.retrofit.MyClient
 import com.example.tools2.retrofit.MyRequest
 
-class Repository():SafeApiCall {
+class Repository(private val request: Class<MyRequest>):SafeApiCall {
 
-    suspend fun getJoke() = safeApiCall { MyClient.buildApi<MyRequest>(MyRequest::class.java).getJoke() }
+    suspend fun getJoke() = safeApiCall { MyClient.buildApi<MyRequest>(request).getJoke() }
 
 }

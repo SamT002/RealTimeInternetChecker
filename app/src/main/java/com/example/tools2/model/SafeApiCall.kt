@@ -1,6 +1,5 @@
 package com.example.tools2.model
 
-import net.simplifiedcoding.multiviewlist.data.network.Resource
 import retrofit2.HttpException
 
 interface SafeApiCall {
